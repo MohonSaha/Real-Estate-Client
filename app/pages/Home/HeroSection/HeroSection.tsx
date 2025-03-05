@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
 
 const HeroSection = () => {
@@ -23,7 +24,9 @@ const HeroSection = () => {
           RIGHT RESERVED
         </p>
 
-        <Button className="cursor-pointer">Explore More</Button>
+        <Button className="cursor-pointer">
+          <Link to="/listings">Explore More</Link>
+        </Button>
 
         <p className="text-xs text-gray-600 max-w-xs text-right">
           With expert guidance and a deep understanding of Indonesia's real

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent } from "~/components/ui/card";
+import { Link } from "react-router";
 
 const PropertyListingsSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -64,11 +65,6 @@ const PropertyListingsSlider = () => {
         cater to various needs and preferences.
       </p>
 
-      {/* <div className="flex items-center justify-center mb-8">
-        <MapPin className="w-5 h-5 text-gray-700 mr-2" />
-        <span className="text-gray-700">Yogyakarta, Indonesia</span>
-      </div> */}
-
       <div className="relative">
         <div className="overflow-hidden relative">
           <div
@@ -85,23 +81,25 @@ const PropertyListingsSlider = () => {
                       className="w-full h-[450px] object-cover rounded-none"
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 flex items-end">
-                      <div className="p-6 text-white">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 flex items-end w-full">
+                      <div className="p-6 text-white mx-auto text-center w-full">
                         <h2 className="text-2xl font-bold mb-2">
                           {property.title}
                         </h2>
-                        <div className="flex items-center mb-3">
+                        <div className="flex items-center mb-3 justify-center">
                           <MapPin className="w-4 h-4 mr-1" />
-                          <span className="text-sm">{property.location}</span>
+                          <span className="text-sm text-center">
+                            {property.location}
+                          </span>
                         </div>
-                        <p className="text-sm text-gray-200">
+                        <p className="text-sm text-gray-200 mx-auto text-center">
                           {property.description}
                         </p>
                       </div>
                     </div>
 
                     <Button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-800 text-white rounded-full w-24 h-24 cursor-pointer">
-                      Details
+                      <Link to="/listings">Details</Link>
                     </Button>
                   </CardContent>
                 </Card>

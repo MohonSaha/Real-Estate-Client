@@ -16,22 +16,22 @@ import { Link, NavLink } from "react-router";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Features", href: "#features" },
+  { name: "Listings", href: "listings" },
   { name: "Pricing", href: "#pricing" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", href: "about" },
+  { name: "Contact", href: "contact" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <header className="sticky left-0 top-0 z-50 border-b w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="fixed md:px-10 px-4 left-0 top-0 z-50  w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ">
+      <div className="container flex h-16 items-center justify-between border-b">
         <div className="flex items-center gap-2">
           <NavLink to="/" className="flex items-center space-x-2">
             <span className="inline-block h-6 w-6 rounded-full bg-primary"></span>
-            <span className="text-xl font-bold">Brand</span>
+            <span className="text-xl font-bold">SAHA AGENCY</span>
           </NavLink>
         </div>
 
@@ -49,9 +49,9 @@ export function Navbar() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="rounded-full">
-                <Avatar className="h-8 w-8">
+                <Avatar className="md:h-10 md:w-10 h-8 w-8 cursor-pointer">
                   <AvatarImage
-                    src="/placeholder.svg?height=32&width=32"
+                    src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg"
                     alt="User"
                   />
                   <AvatarFallback>U</AvatarFallback>
@@ -79,9 +79,10 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col gap-4 py-4">
-                <h2 className="pl-4">
-                  <span className="text-xl font-bold">Brand Name</span>
-                </h2>
+                <NavLink to="/" className="flex items-center space-x-2 pl-4">
+                  <span className="inline-block h-6 w-6 rounded-full bg-primary"></span>
+                  <span className="text-xl font-bold">SAHA AGENCY</span>
+                </NavLink>
                 {navigation.map((item) => (
                   <Button
                     key={item.name}

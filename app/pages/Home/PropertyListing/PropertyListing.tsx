@@ -303,7 +303,6 @@
 
 import { MapPin, BedDouble, Bath, Square } from "lucide-react";
 import { Button } from "~/components/ui/button";
-import { Card, CardContent } from "~/components/ui/card";
 
 const PropertyCard = ({ name, location, beds, baths, area, image, index }) => {
   // First and sixth cards (index 0 and 5) get special treatment
