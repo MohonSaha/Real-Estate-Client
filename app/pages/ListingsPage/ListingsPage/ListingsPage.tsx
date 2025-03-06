@@ -108,45 +108,21 @@ const ListingsPage = () => {
 
   return (
     <div className="container mx-auto pt-1">
-      <div className="flex relative">
-        {/* Fixed Sidebar with stable scrollbar - positioned below navbar */}
+      <div className="flex">
+        {/* Sidebar with transition - normal position (not fixed) */}
         <div
-          className={`transition-all duration-300 ease-in-out fixed top-16 bottom-0 left-0 z-10 ${
-            isFilterOpen
-              ? "w-72 opacity-100 translate-x-0"
-              : "w-0 opacity-0 -translate-x-full"
-          } bg-white border-r overflow-hidden`}
-          style={{
-            marginLeft: isFilterOpen ? "calc((100% - 1280px) / 2 + 5px)" : "0",
-            maxWidth: "50rem",
-          }}
+          className={`transition-all duration-300 ease-in-out overflow-hidden ${
+            isFilterOpen ? "w-72 opacity-100 mr-6" : "w-0 opacity-0 mr-0"
+          } shrink-0 bg-white `}
         >
-          {/* Stable scrollbar container - always reserves space for scrollbar */}
-          <div
-            className="h-full overflow-y-scroll pr-2 scrollbar-container"
-            style={{
-              paddingRight: "18px", // Add extra padding to compensate for scrollbar width
-              marginRight: "-10px", // Negative margin to prevent content shift
-              boxSizing: "content-box", // Ensure padding doesn't affect width calculation
-            }}
-          >
-            {isFilterOpen && <FilterSidebar onClose={toggleFilter} />}
-          </div>
+          {/* Only render the sidebar content when it's open to prevent interactions when closed */}
+          {isFilterOpen && <FilterSidebar onClose={toggleFilter} />}
         </div>
 
         {/* Property Grid - adjusts columns based on sidebar state */}
-        <div
-          className="flex-1 transition-all duration-300"
-          style={{
-            marginLeft: isFilterOpen ? "288px" : "0",
-          }}
-        >
+        <div className="flex-1">
           {/* search and filter tab */}
-          <div
-            className={`flex my-4 items-center border-b-[1px] border-gray-200 pb-4 gap-4 ${
-              isFilterOpen ? "pl-4" : "pl-0"
-            }`}
-          >
+          <div className="flex my-4 items-center border-b-[1px] border-gray-200 pb-4 gap-4">
             {isFilterOpen || (
               <div
                 className="border border-gray-300 p-2 rounded-full cursor-pointer hover:border-gray-400 transition-all duration-200"
@@ -161,11 +137,7 @@ const ListingsPage = () => {
             <DynamicSearchBar />
           </div>
 
-          <div
-            className={`flex justify-between items-center mb-8 ${
-              isFilterOpen ? "pl-4" : "pl-0"
-            }`}
-          >
+          <div className="flex justify-between items-center mb-8">
             <div>
               <h1 className="text-4xl font-bold mb-2">
                 Discover Aruna Property
@@ -185,9 +157,7 @@ const ListingsPage = () => {
             </Button>
           </div>
           <div
-            className={`${
-              isFilterOpen ? "pl-4" : "pl-0"
-            } grid grid-cols-2 transition-all duration-300 md:grid-cols-${
+            className={`grid grid-cols-1 transition-all duration-300 md:grid-cols-${
               isFilterOpen ? "2" : "3"
             } lg:grid-cols-${isFilterOpen ? "2" : "3"} gap-6`}
           >
@@ -208,31 +178,6 @@ const ListingsPage = () => {
           </div>
         </div>
       </div>
-
-      {/* Add global styles for custom scrollbar */}
-      <style jsx global>{`
-        .scrollbar-container::-webkit-scrollbar {
-          width: 8px;
-          background: transparent;
-        }
-
-        .scrollbar-container::-webkit-scrollbar-track {
-          background: transparent;
-        }
-
-        .scrollbar-container::-webkit-scrollbar-thumb {
-          background: transparent;
-          border-radius: 4px;
-        }
-
-        .scrollbar-container:hover::-webkit-scrollbar-thumb {
-          background: #c1c1c1;
-        }
-
-        .scrollbar-container:hover::-webkit-scrollbar-thumb:hover {
-          background: #a1a1a1;
-        }
-      `}</style>
     </div>
   );
 };
@@ -246,7 +191,7 @@ const FilterSidebar = ({ onClose }) => {
   };
 
   return (
-    <div className="py-6 pr-6 h-full">
+    <div className="py-6 pr-6 h-full overflow-y-auto ">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-bold">Filter</h2>
         <button
@@ -259,8 +204,10 @@ const FilterSidebar = ({ onClose }) => {
 
       {/* Price Range */}
       <div className="mb-8">
-        <h3 className="text-lg font-semibold mb-4">Price Range</h3>
-        <div className="px-2">
+        <h3 className="text-lg font-semibold mb-4 border-b-[2px] border-gray-100  pb-1">
+          Price Range
+        </h3>
+        <div className="px-2 pt-4">
           <Slider
             defaultValue={priceRange}
             min={0}
@@ -278,7 +225,9 @@ const FilterSidebar = ({ onClose }) => {
 
       {/* Property Type */}
       <div className="mb-8">
-        <h3 className="text-lg font-semibold mb-4">Property Type</h3>
+        <h3 className="text-lg font-semibold mb-4 border-b-[2px] border-gray-100 pb-1">
+          Property Type
+        </h3>
         <div className="space-y-3">
           <FilterCheckbox label="House" />
           <FilterCheckbox label="Apartment" />
@@ -290,7 +239,9 @@ const FilterSidebar = ({ onClose }) => {
 
       {/* Bedrooms */}
       <div className="mb-8">
-        <h3 className="text-lg font-semibold mb-4">Bedrooms</h3>
+        <h3 className="text-lg font-semibold mb-4  border-b-[2px] border-gray-100 pb-1">
+          Bedrooms
+        </h3>
         <div className="flex space-x-2">
           {[1, 2, 3, 4, 5].map((num) => (
             <button
@@ -308,7 +259,9 @@ const FilterSidebar = ({ onClose }) => {
 
       {/* Bathrooms */}
       <div className="mb-8">
-        <h3 className="text-lg font-semibold mb-4">Bathrooms</h3>
+        <h3 className="text-lg font-semibold mb-4  border-b-[2px] border-gray-100 pb-1">
+          Bathrooms
+        </h3>
         <div className="flex space-x-2">
           {[1, 2, 3, 4].map((num) => (
             <button
@@ -326,7 +279,9 @@ const FilterSidebar = ({ onClose }) => {
 
       {/* Amenities */}
       <div className="mb-8">
-        <h3 className="text-lg font-semibold mb-4">Amenities</h3>
+        <h3 className="text-lg font-semibold mb-4  border-b-[2px] border-gray-100 pb-1">
+          Amenities
+        </h3>
         <div className="space-y-3">
           <FilterCheckbox label="Swimming Pool" />
           <FilterCheckbox label="Garden" />
