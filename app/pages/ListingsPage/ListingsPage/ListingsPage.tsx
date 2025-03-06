@@ -108,21 +108,45 @@ const ListingsPage = () => {
 
   return (
     <div className="container mx-auto pt-1">
-      <div className="flex">
-        {/* Sidebar with transition */}
+      <div className="flex relative">
+        {/* Fixed Sidebar with stable scrollbar - positioned below navbar */}
         <div
-          className={`transition-all duration-300 ease-in-out overflow-hidden ${
-            isFilterOpen ? "w-72 opacity-100 mr-6" : "w-0 opacity-0 mr-0"
-          } shrink-0 bg-white border-r`}
+          className={`transition-all duration-300 ease-in-out fixed top-16 bottom-0 left-0 z-10 ${
+            isFilterOpen
+              ? "w-72 opacity-100 translate-x-0"
+              : "w-0 opacity-0 -translate-x-full"
+          } bg-white border-r overflow-hidden`}
+          style={{
+            marginLeft: isFilterOpen ? "calc((100% - 1280px) / 2 + 5px)" : "0",
+            maxWidth: "50rem",
+          }}
         >
-          {/* Only render the sidebar content when it's open to prevent interactions when closed */}
-          {isFilterOpen && <FilterSidebar onClose={toggleFilter} />}
+          {/* Stable scrollbar container - always reserves space for scrollbar */}
+          <div
+            className="h-full overflow-y-scroll pr-2 scrollbar-container"
+            style={{
+              paddingRight: "18px", // Add extra padding to compensate for scrollbar width
+              marginRight: "-10px", // Negative margin to prevent content shift
+              boxSizing: "content-box", // Ensure padding doesn't affect width calculation
+            }}
+          >
+            {isFilterOpen && <FilterSidebar onClose={toggleFilter} />}
+          </div>
         </div>
 
         {/* Property Grid - adjusts columns based on sidebar state */}
-        <div className="flex-1">
+        <div
+          className="flex-1 transition-all duration-300"
+          style={{
+            marginLeft: isFilterOpen ? "288px" : "0",
+          }}
+        >
           {/* search and filter tab */}
-          <div className="flex my-4 items-center border-b-[1px] border-gray-200 pb-4 gap-4">
+          <div
+            className={`flex my-4 items-center border-b-[1px] border-gray-200 pb-4 gap-4 ${
+              isFilterOpen ? "pl-4" : "pl-0"
+            }`}
+          >
             {isFilterOpen || (
               <div
                 className="border border-gray-300 p-2 rounded-full cursor-pointer hover:border-gray-400 transition-all duration-200"
@@ -137,7 +161,11 @@ const ListingsPage = () => {
             <DynamicSearchBar />
           </div>
 
-          <div className="flex justify-between items-center mb-8">
+          <div
+            className={`flex justify-between items-center mb-8 ${
+              isFilterOpen ? "pl-4" : "pl-0"
+            }`}
+          >
             <div>
               <h1 className="text-4xl font-bold mb-2">
                 Discover Aruna Property
@@ -148,12 +176,18 @@ const ListingsPage = () => {
                 everyone.
               </p>
             </div>
-            <Button variant="ghost" className="text-black hover:bg-gray-100">
+            <Button
+              variant="ghost"
+              className="text-black hover:bg-gray-100"
+              onClick={toggleFilter}
+            >
               Filter Result
             </Button>
           </div>
           <div
-            className={`grid grid-cols-2 transition-all duration-300 md:grid-cols-${
+            className={`${
+              isFilterOpen ? "pl-4" : "pl-0"
+            } grid grid-cols-2 transition-all duration-300 md:grid-cols-${
               isFilterOpen ? "2" : "3"
             } lg:grid-cols-${isFilterOpen ? "2" : "3"} gap-6`}
           >
@@ -174,6 +208,31 @@ const ListingsPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Add global styles for custom scrollbar */}
+      <style jsx global>{`
+        .scrollbar-container::-webkit-scrollbar {
+          width: 8px;
+          background: transparent;
+        }
+
+        .scrollbar-container::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .scrollbar-container::-webkit-scrollbar-thumb {
+          background: transparent;
+          border-radius: 4px;
+        }
+
+        .scrollbar-container:hover::-webkit-scrollbar-thumb {
+          background: #c1c1c1;
+        }
+
+        .scrollbar-container:hover::-webkit-scrollbar-thumb:hover {
+          background: #a1a1a1;
+        }
+      `}</style>
     </div>
   );
 };
@@ -187,7 +246,7 @@ const FilterSidebar = ({ onClose }) => {
   };
 
   return (
-    <div className="py-6 pr-6 h-full overflow-y-auto">
+    <div className="py-6 pr-6 h-full">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-bold">Filter</h2>
         <button
