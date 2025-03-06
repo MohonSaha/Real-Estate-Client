@@ -11,11 +11,11 @@ const listings = () => {
         </div>
       </SectionContainer>
 
-      <SectionContainer>
+      {/* <SectionContainer>
         <div className="mt-24">
           <FAQSection />
         </div>
-      </SectionContainer>
+      </SectionContainer> */}
     </div>
   );
 };
