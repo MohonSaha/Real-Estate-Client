@@ -1,40 +1,49 @@
 import { useState } from "react";
 import "./ImageGallery.css";
 import { X } from "lucide-react";
+import { Button } from "~/components/ui/button";
 const ImageGallery = () => {
   let images = [
     {
       id: 1,
       imgSrc:
-        "https://plus.unsplash.com/premium_photo-1678903964473-1271ecfb0288?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://i.ibb.co.com/7xZM6b78/471311505-10227378204065496-7971507133744482136-n.jpg",
       title: "Griya Asri Tamansari",
     },
     {
       id: 2,
       imgSrc:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://i.ibb.co.com/qL5Sm4kg/465786308-10226765957439713-8176847405436800613-n.jpg",
       title: "Permata Indah Residence",
     },
     {
       id: 3,
-      imgSrc: "https://i.ibb.co.com/zh76TJdv/image-2.jpg",
+      imgSrc:
+        "https://i.ibb.co.com/GQ0C4bgC/468713769-10227298280067446-6490587048174653812-n.jpg",
       title: "Griya Tamansari",
     },
     {
       id: 4,
       imgSrc:
-        "https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://i.ibb.co.com/RpRvQbnm/470800259-10227358296047808-6372762768870687431-n.jpg",
+      title: "Griya Asri Tamansari",
+    },
+    {
+      id: 40,
+      imgSrc:
+        "https://i.ibb.co.com/Rp1gsNpP/469984122-10227317563949531-813178449160652580-n.jpg",
       title: "Griya Asri Tamansari",
     },
     {
       id: 5,
-      imgSrc: "https://i.ibb.co.com/zh76TJdv/image-2.jpg",
+      imgSrc:
+        "https://i.ibb.co.com/fzyLq8pt/468698174-10227261960639483-8790892771645815375-n.jpg",
       title: "Permata Indah Residence",
     },
     {
       id: 6,
       imgSrc:
-        "https://plus.unsplash.com/premium_photo-1734549547994-accfd76f626e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://i.ibb.co.com/fzyLq8pt/468698174-10227261960639483-8790892771645815375-n.jpg",
       title: "Griya Tamansari",
     },
   ];
@@ -49,13 +58,19 @@ const ImageGallery = () => {
 
   return (
     <div className="w-full  mx-auto  py-8">
-      <h1 className="text-4xl font-bold text-center mb-2">
-        Explore Our Moments
-      </h1>
-      <p className="text-center text-gray-600 mb-8">
-        From cozy apartments to spacious family homes, our diverse listings
-        cater to various needs and preferences.
-      </p>
+      <div className="flex justify-between items-center mb-8">
+        <div>
+          <h1 className="text-4xl font-bold mb-2">Explore Our Moments</h1>
+          <p className="text-gray-600 max-w-2xl">
+            From breathtaking landscapes to unforgettable moments, our album
+            captures the beauty of life’s most treasured memories.
+          </p>
+        </div>
+        <Button variant="ghost" className="text-black hover:bg-gray-100">
+          View Album
+        </Button>
+      </div>
+
       <div className="gallery">
         {images.map((image) => {
           return (
