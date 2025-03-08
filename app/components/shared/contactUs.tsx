@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 
-const ContactUs = () => {
+const ContactUs = ({ rounded }: { rounded?: boolean }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Sample property images
@@ -28,13 +28,15 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-[90vh]">
+    <div className="flex flex-col md:flex-row w-full h-[90vh] rounded-md">
       {/* Left side - Image Slider */}
       <div className="relative w-full md:w-4/7 h-96 md:h-[90vh] bg-amber-50">
         <img
           src={propertyImages[currentImageIndex]}
           alt={`Property view ${currentImageIndex + 1}`}
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover ${
+            rounded ? "rounded-l-sm" : ""
+          }`}
         />
 
         {/* Navigation buttons */}
@@ -59,7 +61,11 @@ const ContactUs = () => {
       </div>
 
       {/* Right side - Form */}
-      <div className="w-full md:w-3/7 bg-gray-900 text-white p-8 md:p-12">
+      <div
+        className={`w-full md:w-3/7 bg-gray-900 text-white p-8 md:p-12 ${
+          rounded ? "rounded-r-sm" : ""
+        }`}
+      >
         <div className="max-w-md mx-auto h-full flex flex-col items-center justify-center">
           <div className="mb-8">
             <h2 className="text-2xl md:text-3xl font-semibold mb-2">

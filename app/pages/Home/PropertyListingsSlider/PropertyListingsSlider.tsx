@@ -11,15 +11,15 @@ const PropertyListingsSlider = () => {
     {
       id: 1,
       title: "Griya Asri Tamansari",
-      location: "Sleman, Yogyakarta",
+      location: "Austin, Texas",
       description:
-        "Nestled in the serene landscapes of Sleman, Taman Harmoni Village offers a perfect blend of modern living and natural tranquility.",
+        "Nestled in the serene landscapes of Austin, Taman Harmoni Village offers a perfect blend of modern living and natural tranquility.",
       imageUrl: "https://i.ibb.co.com/YBQYw6bR/real-2.jpg",
     },
     {
       id: 2,
       title: "Permata Indah Residence",
-      location: "Bantul, Yogyakarta",
+      location: "San Diego, California",
       description:
         "A luxurious residential complex featuring contemporary design with spacious living areas and premium amenities.",
       imageUrl: "https://i.ibb.co.com/LDfhVHzs/real-1.jpg",
@@ -27,7 +27,7 @@ const PropertyListingsSlider = () => {
     {
       id: 3,
       title: "Griya Tamansari",
-      location: "Sleman, Yogyakarta",
+      location: "Orlando, Florida",
       description:
         "Modern family homes designed with comfort and elegance, surrounded by lush gardens and community spaces.",
       imageUrl:

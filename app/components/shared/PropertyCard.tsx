@@ -1,5 +1,5 @@
-import React from "react";
-import { MapPin, BedDouble, Bath, Square } from "lucide-react";
+import React, { useState } from "react";
+import { MapPin, BedDouble, Bath, Square, Heart } from "lucide-react";
 import { Button } from "../ui/button";
 import { Link } from "react-router";
 
@@ -11,6 +11,8 @@ interface PropertyCardProps {
   area: string | number;
   image: string;
   onDetailsClick: () => void;
+  onFavoriteToggle?: (isFavorite: boolean) => void;
+  isFavorite?: boolean;
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
@@ -21,7 +23,20 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   area,
   image,
   onDetailsClick,
+  onFavoriteToggle,
+  isFavorite = false,
 }) => {
+  const [favorite, setFavorite] = useState(isFavorite);
+
+  const handleFavoriteClick = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent triggering card click
+    const newFavoriteState = !favorite;
+    setFavorite(newFavoriteState);
+    if (onFavoriteToggle) {
+      onFavoriteToggle(newFavoriteState);
+    }
+  };
+
   return (
     <div className="overflow-hidden group flex flex-col h-full">
       <div className="relative overflow-hidden flex-grow">
@@ -33,6 +48,18 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
           />
           <Button className="group-hover:opacity-80 opacity-0 absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-900/90 hover:bg-gray-800 text-white rounded-full w-24 h-24 cursor-pointer">
             <Link to="/listings/mohon">Details</Link>
+          </Button>
+
+          {/* Favorite Heart Button */}
+          <Button
+            onClick={handleFavoriteClick}
+            className="absolute cursor-pointer top-2 right-2 h-10 w-10 rounded-full p-0 bg-white/80 hover:bg-white shadow-md"
+            aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
+          >
+            <Heart
+              size={24}
+              className={favorite ? "fill-black text-black" : "text-gray-600"}
+            />
           </Button>
         </div>
       </div>

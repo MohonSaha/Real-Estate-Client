@@ -44,7 +44,7 @@ const ListingsPage = () => {
     {
       id: 1,
       name: "Griya Asri Tamansari Griya Asri Tamansari Griya Asri Tamansari",
-      location: "Bogor Tengah",
+      location: "Los Angeles, California",
       beds: 4,
       baths: 2.5,
       area: 410,
@@ -53,7 +53,7 @@ const ListingsPage = () => {
     {
       id: 2,
       name: "Arjuna Hills Estate",
-      location: "Gunungkidul, Yogyakarta",
+      location: "Austin, Texas",
       beds: 4,
       baths: 2.5,
       area: "410 m²",
@@ -62,7 +62,7 @@ const ListingsPage = () => {
     {
       id: 3,
       name: "Nirwana Residence",
-      location: "Semarang Selatan",
+      location: "Miami, Florida",
       beds: 4,
       baths: 2.5,
       area: "410 m²",
@@ -71,7 +71,7 @@ const ListingsPage = () => {
     {
       id: 4,
       name: "Serenity Heights",
-      location: "Malang Barat",
+      location: "Denver, Colorado",
       beds: 4,
       baths: 2.5,
       area: "410 m²",
@@ -80,7 +80,7 @@ const ListingsPage = () => {
     {
       id: 5,
       name: "Taman Asri Estate",
-      location: "Jakarta Selatan",
+      location: "Chicago, Illinois",
       beds: 4,
       baths: 2.5,
       area: "410 m²",
@@ -89,7 +89,7 @@ const ListingsPage = () => {
     {
       id: 6,
       name: "Sentosa Hills",
-      location: "Surabaya Timur",
+      location: "San Francisco, California",
       beds: 4,
       baths: 2.5,
       area: "410 m²",
@@ -98,7 +98,7 @@ const ListingsPage = () => {
     {
       id: 7,
       name: "Nirwana Residence",
-      location: "Semarang Selatan",
+      location: "Miami, Florida",
       beds: 4,
       baths: 2.5,
       area: "410 m²",
@@ -107,7 +107,7 @@ const ListingsPage = () => {
     {
       id: 8,
       name: "Serenity Heights",
-      location: "Malang Barat",
+      location: "Denver, Colorado",
       beds: 4,
       baths: 2.5,
       area: "410 m²",
@@ -116,7 +116,7 @@ const ListingsPage = () => {
     {
       id: 9,
       name: "Taman Asri Estate",
-      location: "Jakarta Selatan",
+      location: "Chicago, Illinois",
       beds: 4,
       baths: 2.5,
       area: "410 m²",
@@ -239,7 +239,7 @@ const ListingsPage = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold mb-2">
-                Discover Aruna Property
+                Discover SAHA AGENCY Property
               </h1>
               <p className="text-gray-600 max-w-2xl">
                 Whether you're looking for a modern apartment in the city or a

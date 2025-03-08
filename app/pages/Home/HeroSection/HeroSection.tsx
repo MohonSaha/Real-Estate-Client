@@ -12,14 +12,14 @@ const HeroSection = () => {
           <br />
           to a new home in
           <br />
-          Indonesia
+          Virginia
         </h1>
       </div>
 
       {/* Right side content */}
       <div className="mt-8 md:mt-0 flex flex-col items-end justify-between h-full">
         <p className="text-sm text-gray-700  text-right font-bold mt-3">
-          ©2024 ARUNA RESIDENCE. ALL
+          ©2025 SAHA AGENCY. ALL
           <br />
           RIGHT RESERVED
         </p>
@@ -29,7 +29,7 @@ const HeroSection = () => {
         </Button>
 
         <p className="text-xs text-gray-600 max-w-xs text-right">
-          With expert guidance and a deep understanding of Indonesia's real
+          With expert guidance and a deep understanding of Virginia's real
           estate landscape, we make your journey to a new home seamless and
           stress-free.
         </p>

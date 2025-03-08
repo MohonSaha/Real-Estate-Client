@@ -7,7 +7,7 @@ interface TextMarqueeProps {
 
 const TextMarquee: React.FC<TextMarqueeProps> = ({
   speed = 1,
-  text = "FIND COMFORT, LIVE WITH ARUN",
+  text = "FIND COMFORT, LIVE WITH SAHA AGENCY",
 }) => {
   const [position, setPosition] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement | null>(null);

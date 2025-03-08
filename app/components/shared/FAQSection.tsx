@@ -11,27 +11,28 @@ const FAQSection = () => {
 
   const faqItems = [
     {
-      question: "How do I start the process of buying a property with Aruna?",
+      question:
+        "How do I start the process of buying a property with SAHA AGENCY?",
       answer:
-        "At Aruna, we make it simple for you to find your dream home. Start by browsing our property listings, and once you've found a property that interests you, contact our team to schedule a viewing and get expert advice on the next steps.",
+        "At SAHA AGENCY, we make it simple for you to find your dream home. Start by browsing our property listings, and once you've found a property that interests you, contact our team to schedule a viewing and get expert advice on the next steps.",
     },
     {
-      question: "What types of properties does Aruna offer?",
+      question: "What types of properties does SAHA AGENCY offer?",
       answer:
-        "Aruna offers a wide range of residential properties including apartments, houses, condos, and luxury homes across various locations to suit different preferences and budgets.",
+        "SAHA AGENCY offers a wide range of residential properties including apartments, houses, condos, and luxury homes across various locations to suit different preferences and budgets.",
     },
     {
-      question: "Can Aruna assist with property financing or mortgages?",
+      question: "Can SAHA AGENCY assist with property financing or mortgages?",
       answer:
-        "Yes, Aruna partners with several trusted financial institutions to provide competitive mortgage options. Our finance specialists can guide you through available financing options and help you secure the best rates for your property purchase.",
+        "Yes, SAHA AGENCY partners with several trusted financial institutions to provide competitive mortgage options. Our finance specialists can guide you through available financing options and help you secure the best rates for your property purchase.",
     },
     {
-      question: "Does Aruna provide property management services?",
+      question: "Does SAHA AGENCY provide property management services?",
       answer:
         "Yes, we offer comprehensive property management services for landlords, including tenant screening, rent collection, maintenance coordination, and regular property inspections to ensure your investment is well-maintained.",
     },
     {
-      question: "Are there any fees involved in working with Aruna?",
+      question: "Are there any fees involved in working with SAHA AGENCY?",
       answer:
         "Our fee structure varies depending on the service you're using. For buyers, our services are often complimentary. For sellers and landlords using our property management services, we charge competitive rates that reflect the quality and comprehensiveness of our services.",
     },
@@ -57,7 +58,7 @@ const FAQSection = () => {
               <div key={index} className="border-b border-gray-200">
                 <button
                   onClick={() => toggleItem(index)}
-                  className="flex justify-between items-center w-full py-4 text-left font-medium"
+                  className="flex justify-between items-center w-full py-4 text-left font-medium cursor-pointer"
                 >
                   {item.question}
                   <ChevronDown

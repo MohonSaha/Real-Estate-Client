@@ -1,3 +1,4 @@
+import ContactUs from "~/components/shared/contactUs";
 import FAQSection from "~/components/shared/FAQSection";
 import SectionContainer from "~/components/shared/SectionContainer";
 import ListingsPage from "~/pages/ListingsPage/ListingsPage/ListingsPage";
@@ -11,11 +12,17 @@ const listings = () => {
         </div>
       </SectionContainer>
 
-      {/* <SectionContainer>
-        <div className="mt-24">
+      <SectionContainer>
+        <div className="mt-12">
+          <ContactUs rounded={true} />
+        </div>
+      </SectionContainer>
+
+      <SectionContainer>
+        <div className="mt-16">
           <FAQSection />
         </div>
-      </SectionContainer> */}
+      </SectionContainer>
     </div>
   );
 };
