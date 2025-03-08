@@ -1,4 +1,4 @@
-import ContactUs from "~/components/shared/contactUs";
+import ContactUs from "~/components/shared/ContactSection";
 import FAQSection from "~/components/shared/FAQSection";
 import SectionContainer from "~/components/shared/SectionContainer";
 import ListingsPage from "~/pages/ListingsPage/ListingsPage/ListingsPage";

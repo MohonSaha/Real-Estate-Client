@@ -24,13 +24,17 @@ const PropertyCard = ({ name, location, beds, baths, area, image, index }) => {
           {isSpecialCard ? (
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <div className="bg-black bg-opacity-70 text-white rounded-full w-20 h-20 flex items-center justify-center">
-                <span className="text-sm font-medium">Details</span>
+                <span className="text-sm font-medium cursor-pointer">
+                  Details
+                </span>
               </div>
             </div>
           ) : (
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="bg-black bg-opacity-70 text-white rounded-full w-20 h-20 flex items-center justify-center">
-                <span className="text-sm font-medium">Details</span>
+                <span className="text-sm font-medium cursor-pointer">
+                  Details
+                </span>
               </div>
             </div>
           )}

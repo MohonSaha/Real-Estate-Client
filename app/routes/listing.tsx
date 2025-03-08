@@ -1,12 +1,13 @@
 import React from "react";
 import SectionContainer from "~/components/shared/SectionContainer";
+import PropertyDetails from "~/pages/PropertyDetails/PropertyDetails";
 
 const listing = () => {
   return (
     <div>
       <SectionContainer>
-        <div className="mt-16">
-          <h1>ready</h1>
+        <div className="mt-24">
+          <PropertyDetails />
         </div>
       </SectionContainer>
     </div>

@@ -4,10 +4,10 @@ import HeroSection from "~/pages/Home/HeroSection/HeroSection";
 import RealEstateSearch from "~/pages/Home/RealEstateSearch/RealEstateSearch";
 import PropertyListingsSlider from "~/pages/Home/PropertyListingsSlider/PropertyListingsSlider";
 import PropertyListing from "~/pages/Home/PropertyListing/PropertyListing";
-import ContactUs from "~/components/shared/contactUs";
 import FAQSection from "~/components/shared/FAQSection";
 import TextMarquee from "~/pages/Home/TextMarquee/TextMarquee";
 import ImageGallery from "~/pages/Home/ImageGallery/ImageGallery";
+import ContactSection from "~/components/shared/ContactSection";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -46,7 +46,7 @@ export default function Home() {
       </SectionContainer>
 
       <div className="mt-12">
-        <ContactUs />
+        <ContactSection />
       </div>
 
       <SectionContainer>

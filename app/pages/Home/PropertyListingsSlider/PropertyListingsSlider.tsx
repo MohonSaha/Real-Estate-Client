@@ -58,7 +58,7 @@ const PropertyListingsSlider = () => {
   return (
     <div className="w-full  mx-auto  py-8">
       <h1 className="text-4xl font-bold text-center mb-2">
-        Explore Our Property Listings
+        Explore New Property Listings
       </h1>
       <p className="text-center text-gray-600 mb-8">
         From cozy apartments to spacious family homes, our diverse listings

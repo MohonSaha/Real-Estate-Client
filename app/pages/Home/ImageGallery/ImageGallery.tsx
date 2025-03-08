@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./ImageGallery.css";
 import { X } from "lucide-react";
 import { Button } from "~/components/ui/button";
+import { Link } from "react-router";
 const ImageGallery = () => {
   let images = [
     {
@@ -66,9 +67,14 @@ const ImageGallery = () => {
             captures the beauty of life’s most treasured memories.
           </p>
         </div>
-        <Button variant="ghost" className="text-black hover:bg-gray-100">
-          View Album
-        </Button>
+        <Link to="/album">
+          <Button
+            variant="ghost"
+            className="text-black hover:bg-gray-100 cursor-pointer"
+          >
+            View Album
+          </Button>
+        </Link>
       </div>
 
       <div className="gallery">

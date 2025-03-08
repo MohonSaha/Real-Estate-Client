@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 
-const ContactUs = ({ rounded }: { rounded?: boolean }) => {
+const ContactSection = ({ rounded }: { rounded?: boolean }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Sample property images
@@ -138,4 +138,4 @@ const ContactUs = ({ rounded }: { rounded?: boolean }) => {
   );
 };
 
-export default ContactUs;
+export default ContactSection;
